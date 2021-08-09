@@ -1,0 +1,19 @@
+version: '3'
+services:
+  database:
+    container_name: db
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: githubapidb
+      ports:
+        3306:3606
+  api:
+    build: .
+    ports:
+        - "8080:8080"
+    depends_on:
+        - database
+    restart: always
