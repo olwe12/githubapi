@@ -10,6 +10,7 @@ For example: http://localhost:8080/users/octocat
 3. How to check if database counter works correctly:
     - docker ps
     - docker exec -ti {mysql container id} bash
+        for example: docker exec -ti 2d0df837a007 bash
     - mysql -u user -p githubapidb
     - enter password:  password
     - select * from git_hub_user_entity
